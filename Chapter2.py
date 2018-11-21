@@ -5,7 +5,7 @@ nums = []
 # nums在python中为连续存储，因此append的存储效率较高 时间复杂度为O(1) insert为时间复杂度O(N)
 nums.append(1)
 nums.insert(0,2)
-
+# 程序评估时间
 import timeit
 x=1
 print(timeit.timeit("x=2+2"))
