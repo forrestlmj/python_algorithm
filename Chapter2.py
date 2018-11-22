@@ -25,4 +25,21 @@ def mytype(a):
 def myRangeAndList():
     a = range(10)
     mytype(a)
-myRangeAndList()
+def graphy():
+    # 邻接列表 邻接集
+    a, b, c, d, e, f, g, h = range(8)
+    N = [
+        {b, c, f, d, e},     # a
+        {c, e},              # b
+        {d},                 # c
+        {e},                 # d
+        {f},                 # e
+        {c, g, h},              # f
+        {f, h},              # g
+        {f, g},              # h
+    ]
+    print(b in N[a])
+    print(d in N[c])
+    print(N[f])
+
+graphy()
