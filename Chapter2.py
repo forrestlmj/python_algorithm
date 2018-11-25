@@ -1,4 +1,3 @@
-from Chapter2_test import find_table_index
 def mylist():
     #
     nums = []
@@ -68,4 +67,20 @@ def graphy():
     print(b in N3[a])
     print(len(N3[f]))
     print(N3[a][b])
+# 调度临界矩阵
 graphy()
+def matrix():
+    a, b, c, d, e, f, g, h = range(8)
+    # a, b, c, d, e, f, g, h
+    N = [[0, 1, 1, 1, 1, 1, 0, 0], # a
+         [0, 0, 1, 0, 1, 0, 0, 0], # b
+         [0, 0, 0, 1, 0, 0, 0, 0], # c
+         [0, 0, 0, 0, 1, 0, 0, 0], # d
+         [0, 0, 0, 0, 0, 1, 0, 0], # e
+         [0, 0, 1, 0, 0, 0, 1, 1], # f
+         [0, 0, 0, 0, 0, 1, 0, 1], # g
+         [0, 0, 0, 0, 0, 1, 1, 0]  # h
+         ]
+    print(N[d][f])
+    print(sum(N[h]))
+matrix()
