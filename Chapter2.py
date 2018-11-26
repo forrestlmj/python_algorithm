@@ -84,3 +84,7 @@ def matrix():
     print(N[d][f])
     print(sum(N[h]))
 matrix()
+
+# 树
+T = [["a", "b"], ["c"], ["d", ["d", ["f"]]]]
+print(T[0][1])
