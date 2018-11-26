@@ -88,3 +88,9 @@ matrix()
 # 树
 T = [["a", "b"], ["c"], ["d", ["d", ["f"]]]]
 print(T[0][1])
+class Tree:
+    def __init__(self,left,right):
+        self.left = left
+        self.right = right
+t = Tree(Tree("a", "b"), Tree("c", "d"))
+print(t.left.right)
