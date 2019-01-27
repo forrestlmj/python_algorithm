@@ -6,7 +6,7 @@ class Solution:
     def adjacencyList(self,N,times):
         a_list = [[] for i in range(0,N+1)]
         for time in times:
-            a_list[time[0]].append(time[1])
+            a_list[time[0]].append({"N_node":time[1],"length":time[2]})
         return a_list[1:]
     def networkDelayTime(self, times, N, K):
         """
@@ -20,18 +20,29 @@ class Solution:
         a_list = self.adjacencyList(N,times)
         print(a_list)
         stack = [K]
-        path_all = []
+        path=list()
+        path.append(K)
+        length = 0
+        all_path = list()
         while(len(stack)>0):
-            current_vertex = stack[len(stack)-1]
+            current_node = stack[len(stack)-1]
             stack.pop()
 
-            for i in a_list[current_vertex-1]:
-                stack.append(i)
-                path_all.append(current_vertex)
-                path_all.append(i)
-            # print(current_vertex)
-            N_bit[current_vertex-1] = 1
-        print(path_all)
+
+
+            for i in a_list[current_node-1]:
+                stack.append(i["N_node"])
+                # path_all.append(current_vertex)
+                # 计算路径时可能会有问题
+                for path in all_path:
+                    path.append(i["N_node"])
+                    length+=i["length"]
+
+
+
+            print(current_node)
+            N_bit[current_node-1] = 1
+        # print(path_all)
         print(N_bit)
         if sum(N_bit) < N:
             print("-1")
@@ -54,7 +65,8 @@ def test2():
              [2,7,33],
              [3,1,2],
              [7,6,2],
-             [5,4,5]]
+             [5,4,5],
+             [4,7,1]]
     s = Solution()
     s.networkDelayTime(times,N,K)
 test()
