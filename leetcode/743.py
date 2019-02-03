@@ -5,8 +5,8 @@ class Solution:
 
     def adjacencyList(self,N,times):
         a_list = [[] for i in range(0,N+1)]
-        for time in times:
-            a_list[time[0]].append({"N_node":time[1],"length":time[2]})
+        for u,v,w in times:
+            a_list[u].append({"N_node":v,"length":w})
         return a_list
     def networkDelayTime(self, times, N, K):
         """
@@ -19,31 +19,35 @@ class Solution:
         N_bit = [float('inf') for i in range(0,N+1)]
         N_bit[K] = 0
         a_list = self.adjacencyList(N,times)
-        print(a_list)
+        # print(a_list)
         stack = [K]
 
         while(len(stack)>0):
             current_node = stack[len(stack)-1]
             stack.pop()
-            for i in a_list[current_node]:
+            # l = sorted(a_list[current_node],key=lambda i:i["length"])
+            for i in sorted(a_list[current_node],key=lambda i:i["length"],reverse=True):
+            # for i in a_list[current_node]:
+
+
                 # 如果点还没有访问过,那么加入栈中,否则不妨问
                 if N_bit[i["N_node"]] == float('inf') or N_bit[i["N_node"]] > N_bit[current_node] + i["length"]:
                     stack.append(i["N_node"])
-                    print(i)
+                    # print(i)
 
                     if N_bit[i["N_node"]] > N_bit[current_node] + i["length"]:
                         N_bit[i["N_node"]] = N_bit[current_node] + i["length"]
-            print(current_node)
+            # print(current_node)
 
             # N_bit[current_node-1] = 1
         # print(path_all)
-        print(N_bit)
+        # print(N_bit)
         amax = max(N_bit[1:])
         if amax == float('inf'):
-            print("-1")
+            # print("-1")
             return -1
         else:
-            print(amax)
+            # print(amax)
             return amax
 def test():
     times = [[2,1,1],[2,3,1],[3,4,1]]
@@ -118,4 +122,7 @@ def test_205504420():
 # test4()
 # test5()
 # test_204431823()
-test_205504420()
+import cProfile
+
+print(cProfile.run("test_205504420()"))
+
