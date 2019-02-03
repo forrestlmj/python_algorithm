@@ -6,7 +6,7 @@ class Solution:
     def adjacencyList(self,N,times):
         a_list = [[] for i in range(0,N+1)]
         for u,v,w in times:
-            a_list[u].append({"N_node":v,"length":w})
+            a_list[u].append((w,v))
         return a_list
     def networkDelayTime(self, times, N, K):
         """
@@ -26,17 +26,17 @@ class Solution:
             current_node = stack[len(stack)-1]
             stack.pop()
             # l = sorted(a_list[current_node],key=lambda i:i["length"])
-            for i in sorted(a_list[current_node],key=lambda i:i["length"],reverse=True):
+            for i in sorted(a_list[current_node],reverse=True):
             # for i in a_list[current_node]:
 
 
                 # 如果点还没有访问过,那么加入栈中,否则不妨问
-                if N_bit[i["N_node"]] == float('inf') or N_bit[i["N_node"]] > N_bit[current_node] + i["length"]:
-                    stack.append(i["N_node"])
+                if N_bit[i[1]] == float('inf') or N_bit[i[1]] > N_bit[current_node] + i[0]:
+                    stack.append(i[1])
                     # print(i)
 
-                    if N_bit[i["N_node"]] > N_bit[current_node] + i["length"]:
-                        N_bit[i["N_node"]] = N_bit[current_node] + i["length"]
+                    if N_bit[i[1]] > N_bit[current_node] + i[0]:
+                        N_bit[i[1]] = N_bit[current_node] + i[0]
             # print(current_node)
 
             # N_bit[current_node-1] = 1
@@ -85,7 +85,7 @@ def test3():
 
              ]
     s = Solution()
-    s.networkDelayTime(times, N, K)
+    assert s.networkDelayTime(times, N, K)==7
 # test()
 def test4():
     N = 2
@@ -95,7 +95,7 @@ def test4():
 
              ]
     s = Solution()
-    s.networkDelayTime(times, N, K)
+    assert s.networkDelayTime(times, N, K) ==1
 def test5():
     N = 2
     K = 2
@@ -116,13 +116,13 @@ def test_205504420():
     K = 7
     s = Solution()
     s.networkDelayTime(times, N, K)
-# test()
-# test2()
-# test3()
-# test4()
-# test5()
-# test_204431823()
+test()
+test2()
+test3()
+test4()
+test5()
+test_204431823()
 import cProfile
-
+#
 print(cProfile.run("test_205504420()"))
 
