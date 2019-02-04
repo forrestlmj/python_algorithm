@@ -9,6 +9,7 @@ class Solution:
         where N is the size of the input array.
         也就是说N条边的树增加一条边生成图,现在需要去掉这个边
         也就是每增加一条边当前图是否存在环路,如果存在环路则输出该边.
+        在做图和树的题目时候一定注意边数与点数的关系!
         """
 
 

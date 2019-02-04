@@ -1,4 +1,4 @@
-#https://leetcode.com/problems/network-delay-time/
+tou#https://leetcode.com/problems/network-delay-time/
 
 class Solution:
 
