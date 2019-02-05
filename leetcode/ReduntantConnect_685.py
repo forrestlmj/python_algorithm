@@ -38,7 +38,7 @@ class Solution:
             seen[current_node] = True
             # 是否已经
             for next_node in graphy[current_node]:
-                if seen[next_node[0]] == False and step == next_node[1]:
+                if seen[next_node[0]] == False :
                     stack.append(next_node[0])
                     step += 1
                     # break
