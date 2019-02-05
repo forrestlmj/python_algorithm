@@ -22,25 +22,28 @@ class Solution:
     def findRedundantDirectedConnection(self, edges):
         # 邻接表这里应该是需要一个顺序的,因此应该用list
         graphy = collections.defaultdict(list)
-
+        count = 0
         for u,v in edges:
-            graphy[u].append(v)
+            graphy[u].append((v,count))
+            count += 1
 
 
         seen = [False for i in range(len(edges)+1)]
         stack = list()
         # 从第一个节点开始遍历
         stack.append(edges[0][0])
+        step = 0
         while len(stack) > 0:
             current_node = stack.pop()
             seen[current_node] = True
             # 是否已经
             for next_node in graphy[current_node]:
-                if seen[next_node] == False:
-                    stack.append(next_node)
-                else:
-                    return [current_node,next_node]
-
+                if seen[next_node[0]] == False and step == next_node[1]:
+                    stack.append(next_node[0])
+                    step += 1
+                    # break
+                elif seen[next_node[0]] == True :
+                    return([current_node,next_node[0]])
 def test_0():
     s = Solution()
     t1 = [[1,2], [1,3], [2,3]]
