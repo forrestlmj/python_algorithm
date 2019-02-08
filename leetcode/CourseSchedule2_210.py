@@ -9,31 +9,34 @@ class Solution(object):
         :type prerequisites: List[List[int]]
         :rtype: List[int]
         """
-        if len(prerequisites) == 0:
-            return [0]
+        pre_limit = prerequisites
         a_list = collections.defaultdict(set)
         order = list()
-        # order = [0 for i in range(numCourses+1)]
         for edge in prerequisites:
             a_list[edge[1]].add(edge[0])
-        c = "xx"
         query = list()
-        if len(a_list) == 0 and not "0" in a_list.keys():
-            return []
-        query.insert(0, 0)
-        order.append(0)
-        while len(query) > 0:
+        query.insert(0, pre_limit[0][1])
+
+        while len(query) > 0 :
             # 出队列记录:
             current_course = query.pop()
             # 如果当前课程没有下一课程,则下一步
+            # if order.count(current_course) > 0:
+            #     return []
+            # else:
+            order.append(current_course)
+
             if not current_course in a_list.keys():
                 pass
             else:
                 for next_cource in a_list.get(current_course):
                 # 入队列的条件:
-                    if order.count(next_cource) == 0:
+                    if order.count(next_cource) > 0:
+                        print("cicyle")
+                        break
+                    elif query.count(next_cource) == 0 :
                         query.insert(0,next_cource)
-                        order.append(next_cource)
+                        # order.append(next_cource)
 
                     else:
                         pass
@@ -75,8 +78,21 @@ def test_206485469():
     s = Solution()
     assert s.findOrder(n,p) == [1,0]
 
+def test_1():
+    # 重新理解了这道题:这道题潜在意思不是遍历所给的边,获取遍历顺序达到最后一门课程,而是:
+    # 一共有N门课程,中间的课程顺序有限制关系,如果没有限制关系,说明课程都要上,不需要排序,
+    n = 5
+    p = [[1, 0], [0,1]]
+    s = Solution()
+    assert s.findOrder(n,p) == []
+    n = 7
+    p = [[1, 0], [3, 2], [4, 2], [5,3]]
+    assert s.findOrder(n,p) == [0,1,2,3,4,5,6]
+
 if __name__ == "__main__":
     test_0()
-    test_206484393()
+    # test_1()
+    # test_206484393()
+
     # test_206485469()
 
