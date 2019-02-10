@@ -15,35 +15,34 @@ class Solution(object):
         for edge in prerequisites:
             a_list[edge[1]].add(edge[0])
         query = list()
-        query.insert(0, pre_limit[0][1])
+        while len(pre_limit) > 0:
+            query.insert(0, pre_limit[0][1])
+            while len(query) > 0:
+                # 出队列记录:
+                current_course = query.pop()
+                order.append(current_course)
 
-        while len(query) > 0 :
-            # 出队列记录:
-            current_course = query.pop()
-            # 如果当前课程没有下一课程,则下一步
-            # if order.count(current_course) > 0:
-            #     return []
-            # else:
-            order.append(current_course)
+                if not current_course in a_list.keys():
+                    pass
+                else:
+                    for next_cource in a_list.get(current_course):
+                        # 入队列的条件:
+                        pre_limit.remove([next_cource, current_course])
 
-            if not current_course in a_list.keys():
-                pass
-            else:
-                for next_cource in a_list.get(current_course):
-                # 入队列的条件:
-                    if order.count(next_cource) > 0:
-                        print("cicyle")
-                        break
-                    elif query.count(next_cource) == 0 :
-                        query.insert(0,next_cource)
-                        # order.append(next_cource)
+                        if order.count(next_cource) > 0:
+                            print("cicyle")
+                            return []
 
-                    else:
-                        pass
-        if order.count(numCourses-1) == 0:
-            return []
-        else:
-            return order
+                        elif query.count(next_cource) == 0:
+                            query.insert(0, next_cource)
+                        else:
+                            pass
+
+
+        for i in range(numCourses):
+            if i not in order:
+                order.append(i)
+        return order
 
 
 
@@ -59,7 +58,7 @@ def test_0():
     assert s.findOrder(n, p) == [0, 1, 2, 3]
     n = 6
     p = [[1,0],[2,0],[3,2],[3,1],[5,4]]
-    assert s.findOrder(n, p) == []
+    assert s.findOrder(n, p) == [0,1,2,3,4,5]
 
 def test_206484393():
     # https://leetcode.com/submissions/detail/206484393/
@@ -76,7 +75,7 @@ def test_206485469():
     n = 2
     p = []
     s = Solution()
-    assert s.findOrder(n,p) == [1,0]
+    assert s.findOrder(n,p) == [0,1]
 
 def test_1():
     # 重新理解了这道题:这道题潜在意思不是遍历所给的边,获取遍历顺序达到最后一门课程,而是:
@@ -84,15 +83,21 @@ def test_1():
     n = 5
     p = [[1, 0], [0,1]]
     s = Solution()
-    assert s.findOrder(n,p) == []
+    # assert s.findOrder(n,p) == []
     n = 7
     p = [[1, 0], [3, 2], [4, 2], [5,3]]
     assert s.findOrder(n,p) == [0,1,2,3,4,5,6]
 
+def test_206855140():
+    # https://leetcode.com/submissions/detail/206855140/
+    n = 3
+    p = [[2,0],[2,1]]
+    s = Solution()
+    assert s.findOrder(n,p) == [1,0,2]
 if __name__ == "__main__":
     test_0()
-    # test_1()
-    # test_206484393()
+    test_1()
+    test_206484393()
 
-    # test_206485469()
+    test_206485469()
 
