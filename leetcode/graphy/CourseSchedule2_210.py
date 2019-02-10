@@ -31,7 +31,7 @@ class Solution(object):
 
                         if order.count(next_cource) > 0:
                             print("cicyle")
-                            return []
+                            # return []
 
                         elif query.count(next_cource) == 0:
                             query.insert(0, next_cource)
@@ -93,8 +93,13 @@ def test_206855140():
     n = 3
     p = [[2,0],[2,1]]
     s = Solution()
-    assert s.findOrder(n,p) == [1,0,2]
+    assert s.findOrder(n,p) == [0,1,2]
+    n = 3
+    p = [[2,0],[0,2]]
+    s = Solution()
+    assert s.findOrder(n,p) == []
 if __name__ == "__main__":
+    test_206855140()
     test_0()
     test_1()
     test_206484393()
