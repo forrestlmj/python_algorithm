@@ -38,7 +38,7 @@ class MyStack(object):
 def test_0():
 # Your MyStack object will be instantiated and called as such:
     obj = MyStack()
-    obj.push(x)
+    obj.push(3)
     param_2 = obj.pop()
     param_3 = obj.top()
     param_4 = obj.empty()
