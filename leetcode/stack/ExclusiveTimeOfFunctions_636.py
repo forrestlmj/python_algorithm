@@ -47,11 +47,11 @@ class Solution(object):
             elif stack.top()[0] == l[0] and stack.top()[1] == "start" and l[1] == "end":
                 start = stack.pop()
                 gap = l[2] - int(start[2]) + 1
-                # sum_gap += gap
+                sum_gap += gap
                 eTime[start[0]] = eTime[start[0]] + gap
                 if not stack.isEmpty():
                     p = stack.pop()
-                    p[2] = p[2] + gap
+                    p[2] = p[2] + sum_gap
                     stack.push(p)
             else:
                 # l[2] = l[2] - sum_gap
@@ -68,24 +68,28 @@ def test_0():
     s = Solution()
     assert s.exclusiveTime(n, logs) == [3, 4]
 
-    n = 3
-    logs = ["0:start:0",
-           "1:start:2",
-           "1:end:5",
-           "2:start:7",
-            "2:end:10",
-            "0:end:12"]
-    s = Solution()
-    assert s.exclusiveTime(n, logs) == [5, 4,4]
+    # n = 3
+    # logs = ["0:start:0",
+    #        "1:start:2",
+    #        "1:end:5",
+    #        "2:start:7",
+    #         "2:end:10",
+    #         "0:end:12"]
+    # s = Solution()
+    # assert s.exclusiveTime(n, logs) == [5, 4,4]
 #https://leetcode.com/submissions/detail/207655800/
 def test_207655800():
     n = 3
     logs = ["0:start:0", "0:end:0", "1:start:1", "1:end:1", "2:start:2", "2:end:2", "2:start:3", "2:end:3"]
     s = Solution()
-    s.exclusiveTime(n, logs)
     assert s.exclusiveTime(n, logs) == [1, 1,2]
-# n =1
-# logs =["0:start:0","0:start:1","0:start:2","0:end:3","0:end:4","0:end:5"]
+# https://leetcode.com/submissions/detail/207656499/
+def test_207656499():
+    n =1
+    logs =["0:start:0","0:start:1","0:start:2","0:end:3","0:end:4","0:end:5"]
+    s = Solution()
+    s.exclusiveTime(n, logs)
 if __name__ == "__main__":
     test_0()
     test_207655800()
+    test_207656499()
