@@ -41,6 +41,7 @@ class Solution(object):
             l = log.split(":")
             l[0] = int(l[0])
             l[2] = int(l[2])
+            l[2] = l[2] - sum_gap
             if stack.isEmpty():
                 stack.push(l)
 
@@ -49,34 +50,29 @@ class Solution(object):
                 gap = l[2] - int(start[2]) + 1
                 sum_gap += gap
                 eTime[start[0]] = eTime[start[0]] + gap
-                if not stack.isEmpty():
-                    p = stack.pop()
-                    p[2] = p[2] + sum_gap
-                    stack.push(p)
             else:
-                # l[2] = l[2] - sum_gap
                 stack.push(l)
         return eTime
 
 
 def test_0():
-    n = 2
-    logs = ["0:start:0",
-           "1:start:2",
-           "1:end:5",
-           "0:end:6"]
-    s = Solution()
-    assert s.exclusiveTime(n, logs) == [3, 4]
-
-    # n = 3
+    # n = 2
     # logs = ["0:start:0",
     #        "1:start:2",
     #        "1:end:5",
-    #        "2:start:7",
-    #         "2:end:10",
-    #         "0:end:12"]
+    #        "0:end:6"]
     # s = Solution()
-    # assert s.exclusiveTime(n, logs) == [5, 4,4]
+    # assert s.exclusiveTime(n, logs) == [3, 4]
+
+    n = 3
+    logs = ["0:start:0",
+           "1:start:2",
+           "1:end:5",
+           "2:start:7",
+            "2:end:10",
+            "0:end:12"]
+    s = Solution()
+    assert s.exclusiveTime(n, logs) == [5, 4,4]
 #https://leetcode.com/submissions/detail/207655800/
 def test_207655800():
     n = 3
