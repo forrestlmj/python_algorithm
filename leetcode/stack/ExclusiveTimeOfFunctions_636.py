@@ -32,19 +32,14 @@ class Solution(object):
         """
         eTime = [0 for i in range(n)]
         stack = Stack()
-        l = logs[0].split(":")
-        l[0] = int(l[0])
-        l[2] = int(l[2])
-        stack.push(l)
         sum_gap = 0
-        for log in logs[1:]:
+        for log in logs:
             l = log.split(":")
             l[0] = int(l[0])
             l[2] = int(l[2])
             l[2] = l[2] - sum_gap
             if stack.isEmpty():
                 stack.push(l)
-
             elif stack.top()[0] == l[0] and stack.top()[1] == "start" and l[1] == "end":
                 start = stack.pop()
                 gap = l[2] - int(start[2]) + 1
@@ -56,13 +51,13 @@ class Solution(object):
 
 
 def test_0():
-    # n = 2
-    # logs = ["0:start:0",
-    #        "1:start:2",
-    #        "1:end:5",
-    #        "0:end:6"]
-    # s = Solution()
-    # assert s.exclusiveTime(n, logs) == [3, 4]
+    n = 2
+    logs = ["0:start:0",
+           "1:start:2",
+           "1:end:5",
+           "0:end:6"]
+    s = Solution()
+    assert s.exclusiveTime(n, logs) == [3, 4]
 
     n = 3
     logs = ["0:start:0",
