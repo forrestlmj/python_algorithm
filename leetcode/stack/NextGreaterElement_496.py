@@ -9,20 +9,30 @@ class Solution(object):
         if len(nums) == 0 or len(findNums) == 0:
             return []
         n = dict()
-        for index in range(len(nums)-1):
-            if nums[index] < nums[index+1]:
-                n[nums[index]] = nums[index+1]
+        stack = list()
+        for index in range(len(nums)):
+            while stack and stack[-1] < nums[index]:
+                n[stack.pop()] = nums[index]
+            stack.append(nums[index])
+            # if nums[index] < nums[index+1]:
+            #     n[nums[index]] = nums[index+1]
+            # else:
+            #     find = False
+            #     for j_index in range(index+1, len(nums)):
+            #         if nums[index] < nums[j_index]:
+            #             n[nums[index]] = nums[j_index]
+            #             find = True
+            #             break
+            #     if not find:
+            #         n[nums[index]] = -1
+        # n[nums[-1]] = -1
+        re = list()
+        for i in findNums:
+            if i not in n:
+                re.append(-1)
             else:
-                find = False
-                for j_index in range(index+1, len(nums)):
-                    if nums[index] < nums[j_index]:
-                        n[nums[index]] = nums[j_index]
-                        find = True
-                        break
-                if not find:
-                    n[nums[index]] = -1
-        n[nums[-1]] = -1
-        return [n[i] for i in findNums]
+                re.append(n[i])
+        return re
 
 
 def test_0():
