@@ -3,16 +3,17 @@ class Solution(object):
 
     def carfleet_speed(self,car1,car2,target):
         # 0 为速度，1为位置
-        if car1[1] == car2[1]:
-            if car1[0] == car2[0]:
+        if car1[0] == car2[0]:
+            if car1[1] == car2[1]:
                 return [car1[0], car1[1]]
             else:
                 return False
         else:
             # 如果速度相差与距离相差符号相反，说明会相遇 and 相遇的时间小于等于辆车到达终点前的距离
+
             if (car1[0] - car2[0])*(car1[1] - car2[1]) < 0\
-                    and abs((car1[0] - car2[0])/(car1[1] - car2[1])) <= min((target-car2[0])/car2[1],(target-car1[0])/car1[1]):
-                return [ int(min(car1[0], car2[0])),int((abs(car1[1]-car2[1])/abs(car1[0]-car2[0]))*min(car1[0], car2[0])+max(car1[1],car2[1]))]
+                    and abs((car1[1] - car2[1])/(car1[0] - car2[0])) <= min((target-car2[1])/car2[0],(target-car1[1])/car1[0]):
+                return [int(min(car1[0], car2[0])),int((abs(car1[1]-car2[1])/abs(car1[0]-car2[0]))*min(car1[0], car2[0])+max(car1[1],car2[1]))]
             else:
                 return False
 
@@ -62,7 +63,14 @@ def test_1():
     target = 12
     s = Solution()
     assert s.carFleet(target, position, speed) == 0
-
+def test_209515694():
+    # https://leetcode.com/submissions/detail/209525619/
+    target = 10
+    position = [0, 4, 2]
+    speed = [2, 1, 3]
+    s = Solution()
+    assert s.carFleet(target, position, speed) == 1
 if __name__ == "__main__":
+    test_209515694()
     test_0()
     test_1()
