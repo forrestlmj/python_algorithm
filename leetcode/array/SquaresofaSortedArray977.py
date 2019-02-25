@@ -47,4 +47,5 @@ def test_0():
     assert s.sortedSquares(A) == [1,9,100]
 
 if __name__ == "__main__":
+    # TODO 双指针解法
     test_0()
