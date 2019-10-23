@@ -10,12 +10,9 @@ class Solution(object):
         seen_location = dict()
         for i in range(len(s)):
             tmp_count += 1
-            if s[i] not in seen_location:
-                seen_location[s[i]] = i
-            else:
+            if s[i] in seen_location:
                 tmp_count = min(i - seen_location[s[i]],tmp_count)
-                seen_location[s[i]] = i
-
+            seen_location[s[i]] = i
             if max_len < tmp_count:
                 max_len = tmp_count
         return max_len
