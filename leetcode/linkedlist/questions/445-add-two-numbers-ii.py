@@ -34,25 +34,13 @@ class Solution(object):
         r2 = self.reverse(l2)
         re = None
         carry = 0
-        while r1 and r2:
-            new_re = ListNode((r1.val+r2.val+carry)%10)
+        while r1 or r2 or carry > 0:
+            r1v,r2v = r1.val if r1 else 0,r2.val if r2 else 0
+            new_re = ListNode((r1v+r2v+carry)%10)
             new_re.next = re
             re = new_re
-            carry = int((r1.val+r2.val+carry)/10)
-            r1,r2 = r1.next,r2.next
-        while r1:
-            new_re = ListNode((r1.val+carry)%10)
-            new_re.next = re
-            re = new_re
-            carry = int((r1.val+carry)/10)
-            r1 = r1.next
-        while r2:
-            new_re = ListNode((r2.val+carry)%10)
-            new_re.next = re
-            re = new_re
-            carry = int((r2.val+carry)/10)
-            r2 = r2.next
-
+            carry = int((r1v+r2v+carry)/10)
+            r1,r2 = r1.next if r1 else None,r2.next if r2 else None
         return re
 def turn_to_list(l):
     head = ListNode(l[0])
@@ -79,6 +67,10 @@ if __name__ == "__main__":
     test( [1],[0])
     test( [9],[0])
     test( [9],[1])
+    test( [9,9,9],[1])
+    test( [2,9,9,9],[1])
+    test( [1],[2,9,9,9])
+    test( [1],[2,9,9,9])
 
     # test( [1,1,2,3,3])
     # test( [11])
