@@ -1,28 +1,42 @@
-# https://leetcode.com/problems/count-primes/
-import math
+import sys
 
 
 class Solution(object):
-    def distributeCandies(self, candies):
+    def shortestCompletingWord(self, licensePlate, words):
         """
-        :type candies: List[int]
-        :rtype: int
+        :type licensePlate: str
+        :type words: List[str]
+        :rtype: str
         """
         d = dict()
-        for i in candies:
-            if i not in d:
-                d[i] = 1
+        l = [i for i in map(chr,range(97,97+25))]
+        for i in licensePlate:
+            if str.lower(i) not in l:
+                continue
+            elif str.lower(i) not in d:
+                d[str.lower(i)] = 1
             else:
-                d[i] += 1
-        return min(len(candies)/2,len(d.keys()))
-
-
-def test():
-    s = Solution()
-    assert s.distributeCandies(candies = [1,1,2,2,3,3]) == 3
-
-    assert s.distributeCandies(candies = [1,1,2,3]) == 2
-
-
-if __name__ == "__main__":
-    test()
+                d[str.lower(i)] += 1
+        re = list()
+        for word in words:
+            w = d.copy()
+            can = True
+            for i in word:
+                if i in w:
+                    w[i] -= 1
+            for i in w.values():
+                if i > 0:
+                    can = False
+            if can:
+                re.append(word)
+        min_len = sys.maxsize
+        min_word = None
+        for w in re:
+            if len(w) < min_len:
+                min_len = len(w)
+                min_word = w
+        # print(min_word)
+        return min_word
+s = Solution()
+s.shortestCompletingWord(licensePlate = "1s3 PSt", words = ["step", "steps", "stripe", "stepple"])
+s.shortestCompletingWord(licensePlate = "1s3 456", words = ["looks", "pest", "stew", "show"])
