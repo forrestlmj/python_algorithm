@@ -25,16 +25,12 @@ class Solution(object):
         :type postorder: List[int]
         :rtype: TreeNode
         """
-        node = None
-        while len(postorder)>1:
-            c = postorder.pop()
-            node = TreeNode(c)
-            node.right = TreeNode(self.buildTree(inorder,postorder) if self.buildTree(inorder,postorder) else None)
-            self.seen.add(c)
-
-            node.left = TreeNode(self.buildTree(inorder[inorder.index(c)-1:],postorder))
-            pass
-            pass
-        return TreeNode(postorder.pop())
+        if not inorder or not postorder:
+            return None
+        root = TreeNode(postorder.pop())
+        inorderindex = inorder.index(root.val)
+        root.right = self.buildTree(inorder[inorderindex+1:],postorder)
+        root.left = self.buildTree(inorder[:inorderindex],postorder)
+        return root
 s = Solution()
 s.buildTree([9,3,15,20,7],[9,15,7,20,3])
