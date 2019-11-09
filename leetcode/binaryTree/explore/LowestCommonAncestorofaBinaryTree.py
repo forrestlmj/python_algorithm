@@ -25,15 +25,15 @@ class Solution(object):
         :type q: TreeNode
         :rtype: TreeNode
         """
-        a = self.dfs(root,p.val)
-        b = self.dfs(root,q.val)
+        a = self.dfs(root,p)
+        b = self.dfs(root,q)
         re = None
         for i in range(min(len(a),len(b))):
-            if a[i] == b[i]:
+            if a[i].val == b[i].val:
                 re = a[i]
             else:
                 break
-        print(re)
+        print(re.val)
         return re
     def dfs(self,cur,q):
         """
@@ -41,16 +41,15 @@ class Solution(object):
         :return: list
         """
         if cur:
-            if cur.val == q:
-                return [cur.val]
+            if cur.val == q.val:
+                return [cur]
             else:
                 left = self.dfs(cur.left,q)
                 if left:
-                    #
-                    return [cur.val]+left
+                    return [cur]+left
                 right = self.dfs(cur.right,q)
                 if right:
-                    return [cur.val]+right
+                    return [cur]+right
 s = Solution()
 s.lowestCommonAncestor(
     TreeNode(3,
