@@ -11,7 +11,8 @@ class Solution:
     ans,l = None,None
     def __init__(self):
         self.ans = sys.maxsize
-        self.l = list()
+        # self.l = list()
+        self.pre = -sys.maxsize
     def minDiffInBST(self, root: TreeNode) -> int:
         self.__init__()
         def dfs(root):
@@ -19,17 +20,12 @@ class Solution:
                 return None
             if root.left:
                 dfs(root.left)
-                # self.l.append(root.left.val)
-                # self.ans = min(self.ans,root.val-root.left.val)
-            self.l.append(root.val)
+            self.ans = min(self.ans,abs(root.val-self.pre))
+            self.pre = root.val
             if root.right:
                 dfs(root.right)
-                # self.ans = min(self.ans,abs(root.val-root.right.val))
-                # self.l.append(root.right.val)
         dfs(root)
-        print(self.l)
-        for i in range(0,len(self.l)-1):
-            self.ans = min(self.ans,self.l[i+1]-self.l[i])
+
         return self.ans
 """
 [7, 138, 263, 267, 296, 308, 322, 
