@@ -16,3 +16,8 @@ print("percent %.2f" % 99.119213112123)
 print("percent %.6s %%" % 99.111213112123)
 
 print("I am %(name)s,age %(age)d" % {"name":"ck","age":18})
+print("I am %(name)-60s,age %(age)d" % {"name":"ck","age":18})
+print("I am %(name)+60s,age %(age)d" % {"name":"ck","age":18})
+
+print("I am {:s},age {:d}".format("xx",19))
+print("{:b}".format(13) )
