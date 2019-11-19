@@ -37,3 +37,6 @@ print(v.get("notk"))
 print(v.get("notk","default"))
 # pop 指定k,删除
 print(v.pop("k1","default"))
+
+v.update(k2="newv2",k3="v3")
+print(v)
