@@ -12,6 +12,7 @@ def foo():
 
 bar = foo()
 print(bar)
+# 每次加括号，    运行新的函数
 tt = foo()()
 tt()
 tt = foo()()()
