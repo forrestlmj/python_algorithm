@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*- 
 # @Time : 2019/11/27 下午4:07 
 # @Author : yangchengkai
-# @File : 文件处理b模式.py
+# @File : 02文件处理b模式.py
 
 # b模式就是直接把磁盘中字节读到内存中再解码，而不是b形式则是在open时候直接按照指定的编码格式解码。
 # 在open中如果采用bytes字节进行磁盘读取时候，就不要指定encoding编码格式，而是直接用b形式。
