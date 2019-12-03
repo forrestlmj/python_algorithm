@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*- 
 # @Time : 2019/11/27 下午9:02 
 # @Author : yangchengkai
-# @File : 07三元表达式列表解析生成器.py
+# @File : 07三元表达式列表解析生成器表达式.py
 
 
 """
