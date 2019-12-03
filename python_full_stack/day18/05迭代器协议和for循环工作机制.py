@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*- 
 # @Time : 2019/11/27 下午5:15 
 # @Author : yangchengkai
-# @File : 迭代器.py
+# @File : 05迭代器协议和for循环工作机制.py
 
 x = "yagc"
 c = x.__iter__()
@@ -42,3 +42,8 @@ while True:
 """
 补充，迭代器就是可迭代对象。一个数据类型如果有__iter__方法，那么它就可以生成迭代器   。
 """
+
+f = open("ttt.txt",encoding='utf-8')
+i = f.__iter__()
+print(i.__next__(),end="")
+print(i.__next__())

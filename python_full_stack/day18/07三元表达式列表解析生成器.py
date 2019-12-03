@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*- 
 # @Time : 2019/11/27 下午9:02 
 # @Author : yangchengkai
-# @File : 生成器.py
+# @File : 07三元表达式列表解析生成器.py
 
 
 """
@@ -45,4 +45,4 @@ print(next(l2))
 print(next(l2))
 
 
-print(sum([i for i in range(10000000000000000)]))
+print(sum((i for i in range(10000000000000000))))
