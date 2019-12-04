@@ -21,7 +21,7 @@ class Trie:
         node = self.root
         # if not word:
         #     return idx
-        if word and self.root.idx is not None:
+        if word == word[::-1] and self.root.idx is not None:
             return self.root.idx
         for i in word:
             if not node.next.get(i):
@@ -44,9 +44,26 @@ class Solution:
         for idx, w in enumerate(words):
             trie.insert(w, idx)
         re = list()
+        empty = None
         for idx, w in enumerate(words):
+            if len(w) == 0:
+                empty = idx
             p = trie.isP(w, idx)
             if p is not None and p != idx:
                 re.append([idx, p])
+        if empty:
+            em = list()
+            for i in re:
+                if i[1] == empty:
+                    em.append([i[1],i[0]])
+            re = re+em
         print(re)
         return re
+
+s = Solution()
+# s.palindromePairs(["abcd","dcba","lls","s","sssll"])
+s.palindromePairs(["abcd","dcba","lls","s","sssll",""])
+
+s.palindromePairs(["bat","tab","cat"])
+s.palindromePairs(["a",""])
+s.palindromePairs(["a","abc","aba",""])
