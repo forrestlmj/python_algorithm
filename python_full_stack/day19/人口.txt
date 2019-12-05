@@ -1,0 +1,7 @@
+{'city':'beijing','pop':1000}
+{'city':'tianjin','pop':2000}
+{'city':'nanjing','pop':4000}
+{'city':'hebei','pop':3000}
+{'city':'guangdong','pop':1300}
+{'city':'sichuan','pop':2000}
+{'city':'chongqing','pop':1400}
