@@ -11,3 +11,4 @@ class Room:
     
 r1 = Room("厕所",'alex',100,100,10000)
 print(r1.cal_area)
+print(r1.name)
