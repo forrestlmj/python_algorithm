@@ -1,0 +1,5 @@
+day35后半部分与day36主要讲的是一种机制：
+系统内核I/O多路复用（IO模型的一种，还包括阻塞io非阻塞io异步io信号io等五种），其中IO资源可以是文件描述符（也就是句柄或socket）
+在实现上分为select,poll,epoll三种
+
+关键词：recv,recvfrom,linux网络编程,高性能IO网络模型，面试重点。
