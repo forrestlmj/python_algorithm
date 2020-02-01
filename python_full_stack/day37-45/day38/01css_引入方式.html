@@ -5,14 +5,9 @@
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <style>
-        p{
-            color: red;
-        }
-        a{
-            text-decoration:none;
-        }
-    </style>
+        {% comment %} 第三种引入方式 链接式 {% endcomment %}
+
+    <link href="01test1.css" rel="stylesheet"></link>
 </head>
 <body>
     第一种引入方式
@@ -21,5 +16,9 @@
     <div>hello div</div>
     <p>通过head的css</p>
     <a href="">点我</a>
+    第四种引入方式 导入式
+    <style>
+        @import "01test1.css"
+    </style>
 </body>
 </html>
