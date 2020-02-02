@@ -6,9 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-    
-        *{
-            color:red;
+        {% comment %} id通过#进行选择定位 {% endcomment %}
+        #littleP {
+            color: blue;
+            {% comment %} background-color: bule; {% endcomment %}
+        }
+        {% comment %} class通过.进行选择定位 {% endcomment %}
+        .cuihua{
+            color: gold
+        }
+        #littleP,div.cuihua{
+            color: red;
+        }
+        .div1 .div2{
+            color:blue;
         }
     </style>
 </head>
@@ -16,7 +27,22 @@
 hello body
     <div>hello div
     </div>
-    <p>ppp</p>
-    <a href="">aaa</a>
+    <p id="littleP">ppp</p>
+    <p id="little p2">ppp</p>
+    <p class="cuihua">ppp</p>
+    <a class="cuihua" href="">aaa</a>
+    <div class="cuihua">cuihua is red</div>
+    <div class="div1">
+        <div>
+            <a href="">a</a>
+            <p class="P">pppp</p>
+            <div>div3</div>
+        </div>
+        <p>p ele</p>
+        <div class="div2">div2</div>
+    </div>
+
+    <div>after div1</div>
+    <p></p>
 </body>
 </html>
