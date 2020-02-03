@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div,p,span,a{
+            width: 50px;
+            height: 50px;
+        }
+        div{
+            background-color: red;
+            {% comment %} display为None时候很重要，在后面的js中隐藏点击主要操作这个属性。 {% endcomment %}
+            display: none;
+        }
+        p{
+            background-color: blue;
+            display: inline;
+        }     
+        span{
+            background-color: red;
+            display: block;
+        }
+        a{
+            background-color: green;
+        }         
+    </style>
+</head>
+<body>
+    <div>div</div>
+    <p>pp</p>
+    <span>span</span>
+    <a href="#">click</a>
+</body>
+</html>
