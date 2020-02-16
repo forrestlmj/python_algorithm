@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        // 函数的创建方式1
+        function f(x,y){
+               return x+y;
+        }
+        console.log(f(23,77))
+        // 函数是一个对象，与python里面一样
+        function add(x,y,z){
+            return x+y+z;
+        }
+ 
+
+ 
+        console.log(add(1,2,3,4,5,6))
+        console.log(add(1,2,3))
+        console.log(add(1,2))
+        // arguments 参数会获得所有参数
+        function f2(){
+            var sum = 0;
+            for(i = 0;i<arguments.length;i++){
+                sum += arguments[i];
+            }
+            console.log(arguments);
+            return sum;
+        }
+        console.log(f2(1,2,3,4,5));
+        // 匿名函数
+        var func = function(args){
+            return "tony";
+        }
+        console.log(func());
+
+        console.log((function(arg){
+            return "this is a cool function"+arg;
+        })(" by ycl"));
+    </script>
+</body>
+</html>
