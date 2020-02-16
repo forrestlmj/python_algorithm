@@ -1,48 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e38b902d-a627-401d-b8ba-3461027537f7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/python_full_stack/day37-45/day37/02html的介绍-server.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_full_stack/day37-45/day37/02html的介绍-test.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_full_stack/day37-45/day37/04meta标签以及一些基本标签-test.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_full_stack/day37-45/day37/05img.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_full_stack/day37-45/day37/05img标签和列表标签.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_full_stack/day37-45/day37/06form表单之input标签.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_full_stack/day37-45/day37/07通过form向server端发送数据.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_full_stack/day37-45/day37/08form表单之select标签.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_full_stack/day37-45/day37/123.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_full_stack/day37-45/day37/testindx/09table标签.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_full_stack/day37-45/day37/testindx/db.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_full_stack/day37-45/day37/testindx/manage.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_full_stack/day37-45/day37/testindx/testindx/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_full_stack/day37-45/day37/testindx/testindx/settings.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_full_stack/day37-45/day37/testindx/testindx/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_full_stack/day37-45/day37/testindx/testindx/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_full_stack/day37-45/day37/testindx/testindx/wsgi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_full_stack/day37-45/day37/课程说明" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_full_stack/day37-45/day38/01css_引入方式.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_full_stack/day37-45/day38/01css的四种引入方式.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_full_stack/day37-45/day38/01test1.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_full_stack/day37-45/day38/02css的四种基本选择器.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_full_stack/day37-45/day38/03组合选择器.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_full_stack/day37-45/day38/06css的选择器优先级.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_full_stack/day37-45/day38/07css的背景属性.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_full_stack/day37-45/day38/课程说明" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_full_stack/day37-45/day39/01css的文本属性.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_full_stack/day37-45/day39/01css的边框属性.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_full_stack/day37-45/day39/02css的列表属性与display属性.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_full_stack/day37-45/day39/02display属性.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_full_stack/day37-45/day39/03css的内外边距.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/python_full_stack/day37-45/day39/进度说明" beforeDir="false" />
-    </list>
+    <list default="true" id="e38b902d-a627-401d-b8ba-3461027537f7" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/python_full_stack/day37-45/day41/07js的字符串对象.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="371">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/python_full_stack/day37-45/day41/07js的字符串对象.html" />
+      </list>
+    </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="width" value="1400" />
@@ -53,7 +40,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -61,11 +47,39 @@
               <item name="python_algorithm" type="b2602c69:ProjectViewProjectNode" />
               <item name="python_algorithm" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="python_algorithm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python_algorithm" type="462c0819:PsiDirectoryNode" />
+              <item name="python_full_stack" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="python_algorithm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python_algorithm" type="462c0819:PsiDirectoryNode" />
+              <item name="python_full_stack" type="462c0819:PsiDirectoryNode" />
+              <item name="day35-36" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="python_algorithm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python_algorithm" type="462c0819:PsiDirectoryNode" />
+              <item name="python_full_stack" type="462c0819:PsiDirectoryNode" />
+              <item name="day37-45" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="python_algorithm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="python_algorithm" type="462c0819:PsiDirectoryNode" />
+              <item name="python_full_stack" type="462c0819:PsiDirectoryNode" />
+              <item name="day37-45" type="462c0819:PsiDirectoryNode" />
+              <item name="day41" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -95,7 +109,7 @@
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1040" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24920969" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2518637" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -106,12 +120,22 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32969433" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32969433" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="right" id="Redis Servers" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/python_full_stack/day37-45/day41/07js的字符串对象.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
