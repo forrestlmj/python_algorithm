@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    {% comment %} 主要html的dom js控制dom节点 {% endcomment %}
+    <div class="div1">
+        <p name="littleP" class="p1" value="faker">hello p1</p>
+        <div class="div2">hello div2
+            <div>div3</div>
+            <a href="">click</a>
+        </div>
+    </div>
+    <script>
+        var ele=document.getElementsByClassName("p1")[0];
+        console.log(ele.nodeName);
+        console.log(ele.nodeType);
+        console.log(ele.nodeValue);
+        //重要
+        console.log(ele.innerHTML);
+        ele.innerHTML="hello world"
+        // 导航 parent,children,sibling
+        var p = ele.parentNode;
+        console.log(p.nodeName);
+        var b = ele.nextSibling;
+        console.log(b.nodeName);
+
+        //下一个标签对象
+        var ele4 = document.getElementsByName("littleP")[0];
+        var ele5 = ele4.nextElementSibling;
+        // 取html
+        console.log(ele5.innerHTML);
+        // 取文本信息
+        console.log(ele5.innerText);
+        ele5.innerHTML ="<h1>replace</h1>"
+        
+
+        //局部查找
+        var ele6 = document.getElementsByClassName("div1")[0];
+        var ele7 = ele6.getElementsByTagName("div");
+        console.log(ele7);
+    </script>
+</body>
+</html>
