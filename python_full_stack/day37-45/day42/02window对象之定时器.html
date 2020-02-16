@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // window为全局变量,alert与confirm为操作window的方法,prompt一些方法。
+        window.alert("hello");
+        var ref = window.confirm("to be confirmed");
+        console.log(ref);
+        var text = window.prompt("prompt");
+        console.log(text);
+
+        // window.open("http://www.baidu.com");
+        window.setInterval(f,1000)
+        function f(){
+            console.log(".......");
+        }
+    </script>
+</body>
+</html>
