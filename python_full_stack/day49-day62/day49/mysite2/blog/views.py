@@ -5,5 +5,5 @@ def show_times(request):
     t = time.ctime()
     return render(request,"index.html",{"time":t})
 
-def article_year(request):
-    return HttpResponse("2004")
+def article_year(request,year,month):
+    return HttpResponse("this is year {0},month {1}".format(year,month));
