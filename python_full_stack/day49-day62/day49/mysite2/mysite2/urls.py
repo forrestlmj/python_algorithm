@@ -19,4 +19,5 @@ from blog import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('show_times/', views.show_times),
+    path('article/2004',views.article_year)
 ]
