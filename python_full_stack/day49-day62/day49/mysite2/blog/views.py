@@ -10,3 +10,6 @@ def article_year(request,year,month):
 
 def article_month(request,month):
     return HttpResponse("this is month{0}".format(month))
+
+def register(request):
+    return HttpResponse("register")
