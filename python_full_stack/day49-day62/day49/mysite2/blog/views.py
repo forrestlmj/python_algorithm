@@ -12,4 +12,9 @@ def article_month(request,month):
     return HttpResponse("this is month{0}".format(month))
 
 def register(request):
+    print(request.GET.get("user"))
+    print(request.GET.get("age"))
+    print(request.GET.get("hobby"))
+    if request.method == "POST":
+        return HttpResponse("success")
     return render(request,"register.html")
