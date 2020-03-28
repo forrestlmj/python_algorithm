@@ -7,7 +7,7 @@ import time
 def show_times(request):
     t = time.ctime()
     name = "yck"
-    return render(request, "index.html", {"time": t, "name": name})
+    return render(request, "index.html", locals())
 
 
 def article_year(request, year, month):
