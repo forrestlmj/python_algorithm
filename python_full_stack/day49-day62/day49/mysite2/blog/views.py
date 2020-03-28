@@ -33,4 +33,5 @@ def register(request):
 
 
 def login(request):
-    return render(request, "login.html")
+    name = "yck"
+    return render(request, "login.html", {"name": name})
