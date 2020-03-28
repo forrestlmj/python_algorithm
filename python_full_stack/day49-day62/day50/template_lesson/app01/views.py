@@ -16,5 +16,13 @@ def query(request):
     # render函数中context参数可以是字典，列表
     action = ["村长", "louisck"]
     d = {"name": "louisck", "age": 46, "hobby": "jerk off"}
+    c = Animal("louisck", "male")
     return render(request, "index.html", locals())
+
+
+class Animal:
+    def __init__(self, name, sex):
+        self.name = name
+        self.sex = sex
+
 
