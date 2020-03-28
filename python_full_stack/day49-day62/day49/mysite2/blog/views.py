@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, redirect, HttpResponse
 
 import time
 # Create your views here.
@@ -23,6 +23,14 @@ def register(request):
     print(request.GET.get("user"))
     print(request.GET.get("age"))
     print(request.GET.get("hobby"))
+    a = 1
     if request.method == "POST":
-        return HttpResponse("success")
+        user = request.POST.get("user")
+        if user == "yck":
+            return redirect("/blog/login/")
+        return HttpResponse("success post")
     return render(request,  "register.html")
+
+
+def login(request):
+    return render(request, "login.html")
