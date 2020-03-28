@@ -11,3 +11,10 @@ def show_times(req):
     return render(req, "show_times.html", {"time": t})
 #     return HttpResponse("sdfsfd")
 
+
+def query(request):
+    # render函数中context参数可以是字典，列表
+    action = ["村长", "louisck"]
+    d = {"name": "louisck", "age": 46, "hobby": "jerk off"}
+    return render(request, "index.html", locals())
+
