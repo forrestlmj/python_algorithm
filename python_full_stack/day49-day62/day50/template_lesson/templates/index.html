@@ -1,3 +1,4 @@
+{% load myTag %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +14,10 @@
     <h1>hello {{c.name}}</h1>
     <h1>hello {{c.sex}}</h1>
     <h1>hello 十年后年龄{{d.age|add:10}}</h1>
+    {% verbatim %}
+        <h1>hello {{d.hobby}}</h1>
 
+    {% endverbatim %}
     <h1>{{e|default:'空列表'}}</h1>
     <h1>{{a|safe}}</h1>
 {% for name in l %}
@@ -25,5 +29,6 @@
         <p>提交 <input type="submit" ></p>
         {% csrf_token %}
     </form>
+{{d.age|filter_multi:3}}
 </body>
 </html>
