@@ -24,6 +24,10 @@ def query(request):
     return render(request, "index.html", locals())
 
 
+def login(request):
+    return HttpResponse("ok")
+
+
 class Animal:
     def __init__(self, name, sex):
         self.name = name

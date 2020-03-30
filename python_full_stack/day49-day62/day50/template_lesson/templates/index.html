@@ -19,5 +19,11 @@
 {% for name in l %}
     <h1>{{forloop.counter}} : {{name}}</h1>
 {% endfor %}
+    <form action="{% url 'login' %}" method="post">
+        <p>姓名 <input type="text" name="user"></p>
+        <p>密码 <input type="text" name="pwd"></p>
+        <p>提交 <input type="submit" ></p>
+        {% csrf_token %}
+    </form>
 </body>
 </html>

@@ -16,10 +16,11 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path
-from app01.views import show_times, query
+from app01.views import show_times, query, login
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     url('show_times/', show_times),
     url('query/', query),
+    url(r'^login', login, name="login"),
 ]
