@@ -12,6 +12,12 @@
     <h1>hello {{d.hobby}}</h1>
     <h1>hello {{c.name}}</h1>
     <h1>hello {{c.sex}}</h1>
+    <h1>hello 十年后年龄{{d.age|add:10}}</h1>
 
+    <h1>{{e|default:'空列表'}}</h1>
+    <h1>{{a|safe}}</h1>
+{% for name in l %}
+    <h1>{{forloop.counter}} : {{name}}</h1>
+{% endfor %}
 </body>
 </html>

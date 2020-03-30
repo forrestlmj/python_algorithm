@@ -17,6 +17,10 @@ def query(request):
     action = ["村长", "louisck"]
     d = {"name": "louisck", "age": 46, "hobby": "jerk off"}
     c = Animal("louisck", "male")
+    text = "hello world"
+    e = []
+    a = "<a href=''>clink</a>"
+    l = ["aa", "bb", "cc"]
     return render(request, "index.html", locals())
 
 
