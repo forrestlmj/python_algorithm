@@ -30,5 +30,6 @@
         {% csrf_token %}
     </form>
 {{d.age|filter_multi:3}}
+{% simple_tag_multi 100 5 %}
 </body>
 </html>

@@ -11,5 +11,10 @@ register = template.Library()
 
 @register.filter
 def filter_multi(x, y):
-    print(x,y)
+    print(x, y)
+    return x * y
+
+
+@register.simple_tag
+def simple_tag_multi(x, y):
     return x * y
