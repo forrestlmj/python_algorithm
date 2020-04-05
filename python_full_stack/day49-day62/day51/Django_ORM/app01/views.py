@@ -41,4 +41,6 @@ def select(request):
     # distinct 按照时间去重
     distinct = Book.objects.all().values("pub_date").distinct()
     print(distinct)
+    book_filter = Book.objects.filter(author="yuan").values("name", "price")
+    print(book_filter)
     return render(request, "index.html", {"book_list": book_list})
