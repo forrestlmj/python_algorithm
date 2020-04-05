@@ -27,3 +27,9 @@ def update(request):
 def delete(request):
     Book.objects.filter(author="yuan").delete()
     return HttpResponse("删除成功")
+
+
+def select(request):
+    book_list = Book.objects.all()
+
+    return render(request, "index.html", {"book_list": book_list})
