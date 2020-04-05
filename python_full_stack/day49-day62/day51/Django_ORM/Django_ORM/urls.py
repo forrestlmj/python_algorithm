@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url('index/', views.index),
     url('addbook/', views.addbook),
+    url('update/', views.update),
 ]

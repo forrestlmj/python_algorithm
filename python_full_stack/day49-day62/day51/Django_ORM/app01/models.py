@@ -8,7 +8,8 @@ class Book(models.Model):
     price = models.IntegerField()
     pub_date = models.DateField()
     author = models.CharField(max_length=32, null=False)
-
+    objects = models.Manager()
 
 class Author(models.Model):
     name = models.CharField(max_length=32)
+    objects = models.Manager()
