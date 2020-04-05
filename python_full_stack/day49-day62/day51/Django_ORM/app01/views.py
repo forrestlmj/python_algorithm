@@ -30,6 +30,15 @@ def delete(request):
 
 
 def select(request):
-    book_list = Book.objects.all()
-
+    # 切片限制limit,-1为倒序
+    book_list = Book.objects.all()[::-1]
+    # values,values也就是select
+    ret = Book.objects.filter(author="yuan").values("name", "price")
+    print(ret)
+    # exclude 不等于情况
+    exclude = Book.objects.exclude(author="yuan")
+    print(exclude)
+    # distinct 按照时间去重
+    distinct = Book.objects.all().values("pub_date").distinct()
+    print(distinct)
     return render(request, "index.html", {"book_list": book_list})
