@@ -18,6 +18,12 @@ def addbook(request):
 
 
 def update(request):
-
+    Book.objects.filter(author="yuan").update(price=990)
+    print(type(Book.objects.filter(author="yuan")))
+    print(type(Book.objects.filter(author="yuan")[0]))
     return HttpResponse("修改成功")
 
+
+def delete(request):
+    Book.objects.filter(author="yuan").delete()
+    return HttpResponse("删除成功")

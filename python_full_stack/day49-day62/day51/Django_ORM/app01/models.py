@@ -10,6 +10,7 @@ class Book(models.Model):
     author = models.CharField(max_length=32, null=False)
     objects = models.Manager()
 
+
 class Author(models.Model):
     name = models.CharField(max_length=32)
     objects = models.Manager()

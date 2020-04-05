@@ -22,4 +22,5 @@ urlpatterns = [
     url('index/', views.index),
     url('addbook/', views.addbook),
     url('update/', views.update),
+    url('delete/', views.delete),
 ]
