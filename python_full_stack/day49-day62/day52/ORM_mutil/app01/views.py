@@ -30,10 +30,26 @@ def addbook(request):
     # print(ret)
 
     # 方式二
-    pub_obj = Publish.objects.filter(name="人民出版社")[0]
-    print(pub_obj.book_set.all())
-    print(type(pub_obj.book_set.all()))
+    # pub_obj = Publish.objects.filter(name="人民出版社")[0]
+    # print(pub_obj.book_set.all())
+    # print(type(pub_obj.book_set.all()))
+    # -----------以下方式其实利用了外键关系，通过双下划线__来限制条件
+    # 方式三 双下划线选择
+    # ret = Book.objects.filter(publish__name="人民出版社").values("name", "price")
+    # print(ret)
 
+    # python这本书出版社的名字
+    # ret2 = Publish.objects.filter(book__name="python").values("name")
+    # print(ret2)
+
+    # 查找北京出版社出版的书
+    # ret4 = Book.objects.filter(publish__city="北京").values("name")
+    # print(ret4)
+
+    # -----------------
+    # 区间查询，查询出版日期在2017-01-01到2017-07-01之间的书籍
+    ret5=Book.objects.filter(pub_date__gt="2017-01-01", pub_date__lt="2017-07-01").values("name")
+    print(ret5)
     return HttpResponse("添加成功")
 
 
