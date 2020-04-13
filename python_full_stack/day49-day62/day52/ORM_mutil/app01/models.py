@@ -9,6 +9,7 @@ class Book(models.Model):
     pub_date = models.DateField()
     objects = models.Manager()
     publish = models.ForeignKey("Publish", on_delete=models.CASCADE)
+    author = models.ManyToManyField("Author")
 
     def __str__(self):
         return self.name
@@ -24,4 +25,5 @@ class Publish(models.Model):
 
 class Author(models.Model):
     name = models.CharField(max_length=32)
+    age = models.IntegerField(default=20)
     objects = models.Manager()
